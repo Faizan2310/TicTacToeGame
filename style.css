@@ -1,0 +1,19 @@
+
+.cell{
+    border-color: black;
+    border: 2px solid;
+    width: 75px;
+    height: 75px;
+    box-shadow: 0 0 0 2px;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+}
