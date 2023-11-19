@@ -33,7 +33,6 @@ function cellClicked(){
    }
    updateCell(this, cellIndex);
    checkWinner();
-   changePlayer(); 
 }
 function updateCell(cell, index){
   options[index] = currentPlayer;
@@ -44,8 +43,23 @@ function changePlayer(){
   statusText.textContent = `${currentPlayer}'s turn`;
 }
 function checkWinner(){
+  for(const pattern of winPatterns){
+    const [a, b, c] = pattern;
+            if (options[a] && options[a] === options[b] && options[a] === options[c]) {
+              statusText.textContent = `Player ${currentPlayer} wins!`;
+              gameActive = false;
+              return;
+            }
+        }
+        if(!options.includes("")){
+          statusText.textContent = `It's a Draw`
+          gameActive = false;
+        }
+        else{
+          changePlayer();
+        }
+    }
 
-}
 function  restartGame(){
    
 }
